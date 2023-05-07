@@ -1,14 +1,17 @@
 package com.example.tstmsg;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.View;
-import android.widget.Button;
+
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.jar.Attributes;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,13 +25,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void CreateCard(View view)
     {
-//
-         EditText Name = findViewById(R.id.Name);
+        EditText Name = findViewById(R.id.editText);
         String name= Name.getText().toString();
 
         Toast.makeText(this,"hello i made this feature ".toUpperCase()+name.toUpperCase(),Toast.LENGTH_SHORT).show();
 
-
+        Intent intent = new Intent(MainActivity.this,BirthdayGreetingActivity.class);
+        intent.putExtra("name", name);
+        startActivity(intent);
     }
 
 
