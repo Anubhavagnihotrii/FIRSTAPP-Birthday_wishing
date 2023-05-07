@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 public class BirthdayGreetingActivity extends AppCompatActivity {
@@ -17,9 +16,8 @@ public class BirthdayGreetingActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String data = intent.getStringExtra("name");
-        Log.d("tstmsg","Happy Birthday"+ data);
         TextView tv = findViewById(R.id.birthdayGreetings);
-        tv.setText("Happy Birthday " +data);
+        tv.setText(String.format("Happy Birthday %s", data));
     }
 
 
